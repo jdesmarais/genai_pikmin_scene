@@ -2,9 +2,9 @@
 
 Methodology :
 
-- Sketch using Affinity Designer (Persona)
-- Create description of the sketch and iterate with ChatGPT5.2
-- Submit sketch and description to NanoBanana to render the scene
+- Sketch using Affinity Designer (Persona) - sketch/genai_pikmin_scene
+- Create description of the sketch and iterate with ChatGPT5.2 - see following prompts
+- Submit sketch and description to NanoBanana to render the scene - see following renders
 
 ## Overview
 
@@ -44,7 +44,13 @@ The scene features soft Nintendo-style lighting, clean materials, high-detail ye
 
 ![image](sketch/shaggy_long_legs_sketch.png)
 
+### Additional image
+
+![image](img/shaggy_long_legs.png)
+
 ### Prompt
+
+(I enclose two images, the first one is a sketch of the scene to be rendered, the second one is a png of shaggy long legs, the Pikmin monster appearing in red in the first sketch)
 
 A cute, official Nintendo-style 3D scene inspired by the Pikmin universe, rendered as a miniature diorama.
 
@@ -67,3 +73,63 @@ The scene uses soft Nintendo-style lighting, clean materials, and high-detail ye
 ### Render
 
 ![image](render/shaggy_long_legs_render.png)
+
+## Scene 3 : Suitcase with bulborb and Oatchi Pikmin
+
+### Enclosed sketch
+
+![image](sketch/suitcase_bulborb_sketch.png)
+
+### Additional images
+
+![image](img/oatchi.jpg)
+
+### Prompt 1
+
+A cute, official Nintendo-style 3D scene inspired by the Pikmin universe, rendered as a miniature diorama.
+
+The scene takes place inside a bright bedroom, featuring a highly stylized wooden herringbone parquet floor. The parquet is intentionally exaggerated and non-realistic, with very wide wooden slats dominating the foreground. The camera is placed low and close to the floor, emphasizing the tiny scale of the Pikmin relative to the environment.
+
+Resting on the floor near the bed (sketched in green) is a large, old-fashioned brown leather suitcase (sketched in black), lying on its main side. The suitcase has soft leather surfaces, visible seams and buckles, and a worn, vintage look. Its handle is facing the camera, making it a clear foreground element.
+
+Two solid triangular-prism ramps (sketched in orange) are placed next to the suitcase, forming a clear climbing path. Each ramp is a three-dimensional wedge-shaped volume, not a flat sheet.
+
+Each ramp has a clearly visible triangular cross-section, with three solid faces:
+– one flat rectangular top surface forming the ramp
+– one slanted triangular side face
+– one vertical triangular end face, clearly showing its thickness
+
+The ramps are resting firmly on the floor and on the suitcase, with their edges and faces clearly visible, making their 3D volume obvious from the camera angle.
+
+The ramps have a kraft paper / papercraft texture, as if made from folded cardboard, and each ramp has a small printed number “10” on one of its faces, reinforcing their handmade, toy-like nature.
+
+Standing on top of the suitcase is a Bulborb (sketched in red), a round Pikmin monster with a hungry expression, its body turned directly toward Oatchi. The Bulborb’s posture suggests alertness and anticipation, as if it has noticed the incoming threat.
+
+On the suitcase surface, directly in front of the Bulborb, Oatchi (sketched in blue, second enclosed image) is captured mid-run, with his entire body oriented toward the Bulborb. Oatchi is looking straight at the Bulborb, leaning forward with determination, frozen in the moment just before attacking, making the confrontation feel immediate and intentional.
+
+The scene uses soft Nintendo-style lighting, clean materials, and high-detail yet friendly textures, with a playful, whimsical tone consistent with the official Pikmin universe aesthetic.
+
+### Prompt 2
+
+Along the papercraft ramps, seven Winged (Pink) Pikmin are all flying in the same direction, forming a single, unidirectional ascent from the floor up to the bed.
+
+The Winged Pikmin are clearly originating from the ground, then flying upward onto the suitcase, and finally continuing their movement toward the bed, with all Pikmin facing and moving toward the bed. There are no Pikmin descending, turning back, or facing the opposite direction.
+
+Their motion is explicitly upward and forward, reinforcing the idea of a careful transport route from the floor to the bed, rather than a return path.
+
+The Winged Pikmin are fully airborne, hovering and flying above the ramps rather than walking on them. Their small transparent wings are actively flapping, and their feet are lifted off the surface, clearly showing that flight is supporting their movement.
+
+Each Winged Pikmin is carrying a transparent marble that appears heavy relative to their small body size. The marbles are large compared to the Pikmin, causing the Pikmin to lean forward slightly, strain under the weight, and fly more slowly and carefully.
+
+Each marble is unique, with different internal colors, reflections, and subtle textures, and is held firmly with visible effort, reinforcing the sense that the marbles are precious and difficult to transport.
+
+The Winged Pikmin have blue eyes and small transparent wings.
+
+- Two Winged Pikmin have a leaf on their head
+- One has a flower bud
+- Four have a fully bloomed flower
+
+### Render
+
+![image](render/suitcase_bulborb.png)
+![image](render/suitcase_bulborb2.png)

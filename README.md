@@ -2,13 +2,17 @@
 
 Methodology :
 
+- Sketch using Affinity Designer (Persona)
+- Create description of the sketch and iterate with ChatGPT5.2
+- Submit sketch and description to NanoBanana to render the scene
+
 ## Overview
 
 ## Scene 1 : Rock pikmins with lego bricks
 
 ### Enclosed sketch
 
-![image](rock_pikmins_sketch.png)
+![image](sketch/rock_pikmins_sketch.png)
 
 ### Prompt
 
@@ -32,13 +36,13 @@ The scene features soft Nintendo-style lighting, clean materials, high-detail ye
 
 ### Render
 
-![image](rock_pikmins_render.png)
+![image](render/rock_pikmins_render.png)
 
 ## Scene 2 : Shaggy Long Legs on chessboard
 
 ### Enclosed sketch
 
-![image](shaggy_long_legs_sketch.png)
+![image](sketch/shaggy_long_legs_sketch.png)
 
 ### Prompt
 
@@ -62,4 +66,4 @@ The scene uses soft Nintendo-style lighting, clean materials, and high-detail ye
 
 ### Render
 
-![image](shaggy_long_legs_render.png)
+![image](render/shaggy_long_legs_render.png)

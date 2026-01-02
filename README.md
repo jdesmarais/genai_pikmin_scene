@@ -133,3 +133,236 @@ The Winged Pikmin have blue eyes and small transparent wings.
 
 ![image](render/suitcase_bulborb.png)
 ![image](render/suitcase_bulborb2.png)
+
+## Scene 4 : bed cover + base + spaceship
+
+### Sketch
+
+![image](sketch/bed_sketch.png)
+
+### Description
+
+A cute, official Nintendo-style 3D scene inspired by the Pikmin universe, rendered as a miniature diorama.
+
+The scene takes place inside a bright bedroom, with a bed covered by a green bedspread serving as the main surface of the scene. The fabric of the bed cover is softly textured and slightly wrinkled, emphasizing scale and softness.
+
+On the side of the frame, a Beagle spaceship is floating in mid-air. The ship is clearly airborne and emits a soft blue beam of light downward, illuminating the bed cover beneath it.
+
+The Beagle spaceship is oriented toward the Onion, as if accompanying or supervising its landing, reinforcing a sense of coordination rather than randomness.
+
+The camera is positioned at a low, slightly elevated angle relative to the bed, making the Onion and the spaceship feel small and toy-like within the larger bedroom environment.
+
+The scene uses soft Nintendo-style lighting, clean materials, and friendly, high-detail textures, with a calm, whimsical tone fully consistent with the official Pikmin universe aesthetic.
+
+### Render
+
+![image](render/bed_onion_beagle.png)
+
+## Scene 5 : Stuffed animals + bed cover
+
+## Description
+
+I would like now to use the same bed cover (remove the beagle and the pikmin onion) and add the stuffed animal I am enclosing.
+
+## Extra images
+
+![image](img/paulin.jpg)
+![image](img/lapin_bleu.jpg)
+
+## Render
+
+![image](render/bed_paulin_render.png)
+![image](render/bed_paulin_pralin_render.png)
+![image](render/bed_paulin_pralin_lapin_bleu_render.png)
+
+## Scene 6 : Library with rubiskube
+
+## Main scene
+
+### Sketch
+
+![image](sketch/main_scene_sketch.png)
+
+### Description
+
+A cute, official Nintendo-style 3D scene inspired by the Pikmin universe, rendered as a miniature diorama.
+
+The scene takes place inside a bright bedroom, viewed from a low camera angle close to the floor, emphasizing the tiny scale of Pikmin relative to the environment.
+
+On the far left side of the room, a large French window extends from near the floor upward, composed of tall glass panes. Soft daylight enters through the window from left to right, gently illuminating the room. Light curtains are pulled to the sides, framing the window without blocking the light.
+
+The floor is covered with a highly stylized wooden parquet.
+
+All the walls are clean white, simple and uncluttered, helping the room feel calm, bright, and readable.
+
+On the right side of the room, a child-sized bed is positioned against the wall. The bed is covered with a pale green bedspread, smoothly draped over the mattress, with soft green pillows resting neatly at the head of the bed. The bed has rounded, friendly proportions, consistent with a Nintendo-style aesthetic.
+
+To the left of the bed, a small white bookcase stands on the floor. The bookcase has two shelves and is no taller than the bed frame, reinforcing the diorama scale. The shelves are filled with neatly arranged books, adding color and life without clutter.
+
+Along the back wall, a wooden cupboard with closed doors is visible. The cupboard has a simple, smooth design, light wood tones, and clean vertical doors, serving as a calm background element without drawing attention away from the main scene.
+
+The overall lighting is soft and natural, with gentle shadows cast across the wide parquet floor. Materials are clean, slightly simplified, and toy-like, maintaining a whimsical, friendly tone fully consistent with the official Pikmin universe aesthetic.
+
+### Render
+
+![image](render/main_scene_render.png)
+
+## Combination of all the scenes
+
+### Description
+
+Use the first image as the fixed and authoritative base scene.
+
+The floor, parquet pattern, lighting direction, camera angle, perspective, and room layout of the first image must remain completely unchanged. Do not redraw, repaint, reinterpret, or regenerate any part of the base scene.
+
+The second image is a source of foreground objects only.
+
+Extract only the characters and objects from the second image, and discard its floor, background, camera, shadows, and environment entirely. Do not preserve or blend any part of the second image’s floor or background into the base scene.
+
+Insert the extracted objects from the second image into the first image as follows:
+– Place them on the floor area in the lower-left corner of the base image, near the window aligned to the perspective and scale of the base scene.
+
+– Resize the extracted objects so that their total height does not exceed one-fifth (1/6) of the height of the base image, ensuring they appear small and toy-like relative to the room.
+
+The inserted objects should appear as if they were originally present in the base scene, resting naturally on the existing floor, without altering the floor’s texture, pattern, or lighting.
+
+Do not modify the base floor, walls, furniture, or lighting. Only add the extracted objects on top of the existing environment.
+
+Maintain Nintendo-style materials, proportions, and softness, but prioritize preserving the structure of the base image over stylistic reinterpretation. This task is scene compositing, not scene regeneration.
+
+Negative constraints:
+
+– redraw floor
+– duplicate parquet
+– regenerate subscene background
+– change camera angle
+– reinterpret lighting
+– merge floors
+– rescale base scene
+
+2752 x 1536 -> 2048 x 1143
+600 x 256 -> 446 x 191
+250 x 1100 -> 186 x 819
+
+### Prompt
+
+I want to insert the image 2 into image 1 while enforcing the following instructions :
+
+### Authoritative base image
+
+Use **Image 1** as the fixed and authoritative base scene.
+
+- Image 1 dimensions: **2752 × 1536 pixels**
+- Pixel coordinate system:
+
+  - Origin **(0, 0)** at the top-left corner
+  - X increases to the right
+  - Y increases downward
+
+The following elements of Image 1 must remain **completely unchanged**:
+
+- Floor geometry and parquet pattern
+- Lighting direction, intensity, and color
+- Camera position, focal length, and perspective
+- Room layout, walls, furniture, and shadows
+
+Do **not** redraw, repaint, reinterpret, regenerate, rescale, or hallucinate any part of the base image.
+
+---
+
+### Foreground source image
+
+**Image 2** is a **foreground source only**.
+
+- Image 2 dimensions: **2304 × 1856 pixels**
+
+Perform the following operations **in order**:
+
+---
+
+### 1. Foreground extraction
+
+Extract **only** the characters and objects from Image 2.
+
+- Remove and discard its floor, background, environment, camera perspective, and shadows entirely
+- Do **not** preserve, blend, merge, or regenerate any part of Image 2’s background
+- The result must be a clean foreground with transparency (alpha-like separation)
+
+---
+
+### 2. Scaling
+
+Uniformly downscale the extracted foreground so that its **final bounding box fits entirely within**:
+
+```
+Maximum width  : 600 px
+Maximum height : 256 px
+```
+
+- Preserve the original aspect ratio
+- Do not upscale
+- Do not distort proportions
+
+This size constraint ensures the inserted objects appear **small and toy-like** relative to the room.
+
+---
+
+### 3. Placement (exact pixel coordinates)
+
+Composite the scaled foreground onto Image 1 such that the **top-left corner of the foreground bounding box** is located at:
+
+```
+x = 250 px
+y = 1100 px
+```
+
+- Placement must be entirely within Image 1
+- The foreground must sit on the **existing floor plane** in the lower-left area near the window
+- Do not alter or overwrite any base pixels outside the foreground’s alpha region
+
+---
+
+### Compositing constraints
+
+- The inserted objects should appear as if they were **originally present** in the base scene
+- Allow **subtle, physically plausible grounding cues**:
+
+  - Correct floor contact
+  - Perspective-consistent scale
+  - Lighting coherence consistent with the base scene
+
+- Do **not** invent new light sources
+- Do **not** modify existing shadows, floor texture, or parquet pattern
+
+Only the extracted foreground objects may be added.
+
+---
+
+### Output constraints
+
+- The final image must have **exactly the same resolution as Image 1**:
+  **2752 × 1536 pixels**
+- No cropping
+- No rescaling of the base scene
+
+---
+
+### Style constraints
+
+- Maintain **Nintendo-style materials, softness, and proportions** for the inserted objects **only**
+- Do not stylize, reinterpret, or smooth the base scene
+- Structural fidelity of Image 1 takes priority over stylistic interpretation
+
+This task is **scene compositing**, not scene regeneration.
+
+---
+
+### Negative constraints (hard prohibitions)
+
+- redraw floor
+- duplicate parquet
+- regenerate background
+- change camera angle
+- reinterpret lighting
+- merge floors
+- rescale base image

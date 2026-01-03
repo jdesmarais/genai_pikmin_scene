@@ -5,8 +5,44 @@ Methodology :
 - Sketch using Affinity Designer (Persona) - sketch/genai_pikmin_scene
 - Create description of the sketch and iterate with ChatGPT5.2 - see following prompts
 - Submit sketch and description to NanoBanana to render the scene - see following renders
+- Combine multiple renders using NanoBanana or Flux (Black Forest Labs)
 
-## Overview
+## TODO
+
+[ ] Create pikmin carrying a Rubiskube
+[ ] Create pikmins fighting a heron
+[ ] Create pikmins inside the library
+[ ] Add the poster on top of the library on the wall
+
+## Main scene : Bed, parquet, library
+
+### Sketch
+
+![image](sketch/main_scene_sketch.png)
+
+### Description
+
+A cute, official Nintendo-style 3D scene inspired by the Pikmin universe, rendered as a miniature diorama.
+
+The scene takes place inside a bright bedroom, viewed from a low camera angle close to the floor, emphasizing the tiny scale of Pikmin relative to the environment.
+
+On the far left side of the room, a large French window extends from near the floor upward, composed of tall glass panes. Soft daylight enters through the window from left to right, gently illuminating the room. Light curtains are pulled to the sides, framing the window without blocking the light.
+
+The floor is covered with a highly stylized wooden parquet.
+
+All the walls are clean white, simple and uncluttered, helping the room feel calm, bright, and readable.
+
+On the right side of the room, a child-sized bed is positioned against the wall. The bed is covered with a pale green bedspread, smoothly draped over the mattress, with soft green pillows resting neatly at the head of the bed. The bed has rounded, friendly proportions, consistent with a Nintendo-style aesthetic.
+
+To the left of the bed, a small white bookcase stands on the floor. The bookcase has two shelves and is no taller than the bed frame, reinforcing the diorama scale. The shelves are filled with neatly arranged books, adding color and life without clutter.
+
+Along the back wall, a wooden cupboard with closed doors is visible. The cupboard has a simple, smooth design, light wood tones, and clean vertical doors, serving as a calm background element without drawing attention away from the main scene.
+
+The overall lighting is soft and natural, with gentle shadows cast across the wide parquet floor. Materials are clean, slightly simplified, and toy-like, maintaining a whimsical, friendly tone fully consistent with the official Pikmin universe aesthetic.
+
+### Render
+
+![image](render/main_scene_render.png)
 
 ## Scene 1 : Rock pikmins with lego bricks
 
@@ -160,16 +196,16 @@ The scene uses soft Nintendo-style lighting, clean materials, and friendly, high
 
 ## Scene 5 : Stuffed animals + bed cover
 
-## Description
+### Description
 
 I would like now to use the same bed cover (remove the beagle and the pikmin onion) and add the stuffed animal I am enclosing.
 
-## Extra images
+### Extra images
 
 ![image](img/paulin.jpg)
 ![image](img/lapin_bleu.jpg)
 
-## Render
+### Render
 
 ![image](render/bed_paulin_render.png)
 ![image](render/bed_paulin_pralin_render.png)
@@ -177,39 +213,31 @@ I would like now to use the same bed cover (remove the beagle and the pikmin oni
 
 ## Scene 6 : Library with rubiskube
 
-## Main scene
-
-### Sketch
-
-![image](sketch/main_scene_sketch.png)
-
 ### Description
 
-A cute, official Nintendo-style 3D scene inspired by the Pikmin universe, rendered as a miniature diorama.
+A group of exactly seven Pikmin cooperatively carrying a standard Rubik’s Cube.
 
-The scene takes place inside a bright bedroom, viewed from a low camera angle close to the floor, emphasizing the tiny scale of Pikmin relative to the environment.
+The Pikmin are a mixed group including red, blue, yellow, and purple Pikmin, each with their distinct color and body shape.
+The scene is shown in a strict side view, with all characters visible in profile, moving from left to right as a coordinated group.
+The Rubik’s Cube is physically supported by the Pikmin’s arms and bodies, clearly lifted and carried with visible effort and teamwork.
+The Pikmin are arranged in a horizontal line, some pushing, some lifting, some stabilizing the cube, emphasizing cooperative motion and balance.
+No background.
 
-On the far left side of the room, a large French window extends from near the floor upward, composed of tall glass panes. Soft daylight enters through the window from left to right, gently illuminating the room. Light curtains are pulled to the sides, framing the window without blocking the light.
+Render the characters and the Rubik’s Cube as isolated foreground objects only, with no floor, no ground plane, no environment, no sky, no walls, and no scenery.
+The background should be completely empty and uniform, suitable for compositing, with clear, clean object edges.
 
-The floor is covered with a highly stylized wooden parquet.
+The scene uses soft Nintendo-style lighting, clean materials, and high-detail yet friendly textures, balancing playful charm with a sense of dynamic action, staying fully consistent with the official Pikmin universe aesthetic.
 
-All the walls are clean white, simple and uncluttered, helping the room feel calm, bright, and readable.
+The composition should contain only the seven Pikmin and the Rubik’s Cube, nothing else.
 
-On the right side of the room, a child-sized bed is positioned against the wall. The bed is covered with a pale green bedspread, smoothly draped over the mattress, with soft green pillows resting neatly at the head of the bed. The bed has rounded, friendly proportions, consistent with a Nintendo-style aesthetic.
+Negative Prompt (important for true isolation)
+Use all of these:
 
-To the left of the bed, a small white bookcase stands on the floor. The bookcase has two shelves and is no taller than the bed frame, reinforcing the diorama scale. The shelves are filled with neatly arranged books, adding color and life without clutter.
-
-Along the back wall, a wooden cupboard with closed doors is visible. The cupboard has a simple, smooth design, light wood tones, and clean vertical doors, serving as a calm background element without drawing attention away from the main scene.
-
-The overall lighting is soft and natural, with gentle shadows cast across the wide parquet floor. Materials are clean, slightly simplified, and toy-like, maintaining a whimsical, friendly tone fully consistent with the official Pikmin universe aesthetic.
-
-### Render
-
-![image](render/main_scene_render.png)
+background, floor, ground, terrain, grass, dirt, shadow on ground, environment, room, sky, gradient background, vignette, fog, horizon, extra objects, extra characters, front view, three-quarter view, incorrect number of Pikmin, floating cube without support
 
 ## Combination of all the scenes
 
-### Description
+### Main + legos (flux2 - black forest)
 
 Use the first image as the fixed and authoritative base scene.
 
@@ -244,125 +272,201 @@ Negative constraints:
 600 x 256 -> 446 x 191
 250 x 1100 -> 186 x 819
 
-### Prompt
+### Main + legos + chessboard
 
-I want to insert the image 2 into image 1 while enforcing the following instructions :
+Insert the chessboard scene from the second reference image into the first bedroom image.
 
-### Authoritative base image
+Place the chessboard on the parquet floor, positioned directly in front of the white two-shelf library, centered horizontally with the bookshelf and fully unobstructed by any furniture.
 
-Use **Image 1** as the fixed and authoritative base scene.
+The chessboard should have a real-world width of approximately 50 cm, appearing proportional to the room and roughly matching the width of the lower shelf without touching it.
 
-- Image 1 dimensions: **2752 × 1536 pixels**
-- Pixel coordinate system:
+Preserve all chess pieces, characters, and the large black shaggy monster exactly as in the reference placed inside a realistic bedroom.
 
-  - Origin **(0, 0)** at the top-left corner
-  - X increases to the right
-  - Y increases downward
+Match the camera angle, floor perspective, and depth of the bedroom image so the chessboard sits naturally on the floor with correct scale and alignment.
 
-The following elements of Image 1 must remain **completely unchanged**:
+Adapt the lighting to the bedroom scene: soft natural daylight from the window, neutral color temperature, with realistic diffuse contact shadows beneath the chessboard, chess pieces, and characters.
 
-- Floor geometry and parquet pattern
-- Lighting direction, intensity, and color
-- Camera position, focal length, and perspective
-- Room layout, walls, furniture, and shadows
+Ensure clean grounding on the floor with no floating, no cut-out edges, no halos, no perspective distortion.
 
-Do **not** redraw, repaint, reinterpret, regenerate, rescale, or hallucinate any part of the base image.
+The final result should look like a single coherent photograph where a toy chessboard with figures naturally exists in the bedroom.
 
----
+#### Negative prompt
 
-### Foreground source image
+floating objects, incorrect scale, exaggerated size, harsh shadows, mismatched lighting, wrong perspective, blurred edges, cut-out artifacts, overlapping furniture, occlusion by bed or shelf, duplicated chess pieces, cartoon outlines
 
-**Image 2** is a **foreground source only**.
+#### Mask guidance
 
-- Image 2 dimensions: **2304 × 1856 pixels**
+Mask only the chessboard + character scene in Image B
+Leave background fully transparent
+Let Flux2 infer floor contact and shadows
 
-Perform the following operations **in order**:
+### Main + legos + chessboard + suitcase
 
----
+### Main + pikmin onion + beagle spaceship
 
-### 1. Foreground extraction
+Use the first image as the fixed and authoritative base scene.
 
-Extract **only** the characters and objects from Image 2.
+The floor, parquet pattern, lighting direction, camera angle, perspective, and room layout of the first image must remain completely unchanged. Do not redraw, repaint, reinterpret, or regenerate any part of the base scene.
 
-- Remove and discard its floor, background, environment, camera perspective, and shadows entirely
-- Do **not** preserve, blend, merge, or regenerate any part of Image 2’s background
-- The result must be a clean foreground with transparency (alpha-like separation)
+The second image is a source of foreground objects only.
 
----
+Extract only the two objects from the second image (the small spaceship and the sphere with a flower and three legs), and discard its floor, background, camera, shadows, and environment entirely. Do not preserve or blend any part of the second image’s floor or background into the base scene.
 
-### 2. Scaling
+Insert the extracted objects from the second image into the first image as follows:
+– Place them on the green bed cover area on the right side of the base image, aligned to the perspective and scale of the base scene.
 
-Uniformly downscale the extracted foreground so that its **final bounding box fits entirely within**:
+– Resize the extracted objects so that their total height does not exceed one-tenth (1/10) of the height of the base image, ensuring they appear small and toy-like relative to the room.
 
-```
-Maximum width  : 600 px
-Maximum height : 256 px
-```
+The inserted objects should appear as if they were originally present in the base scene. Ensure the objects physically contact the bed cover, with soft fabric contact shadows and subtle fabric indentation, so they appear to sit on the blanket rather than float above it.
 
-- Preserve the original aspect ratio
-- Do not upscale
-- Do not distort proportions
+Do not modify the base floor, walls, furniture, or lighting. Only add the extracted objects on top of the existing environment.
 
-This size constraint ensures the inserted objects appear **small and toy-like** relative to the room.
+Maintain Nintendo-style materials, proportions, and softness, but prioritize preserving the structure of the base image over stylistic reinterpretation. This task is scene compositing, not scene regeneration.
 
----
+Negative constraints:
 
-### 3. Placement (exact pixel coordinates)
+– redraw floor
+– duplicate parquet
+– regenerate subscene background
+– change camera angle
+– reinterpret lighting
+– merge floors
+– rescale base scene
 
-Composite the scaled foreground onto Image 1 such that the **top-left corner of the foreground bounding box** is located at:
+### Main + stuffed animals
 
-```
-x = 250 px
-y = 1100 px
-```
+Use the first image as the fixed, authoritative base scene. The output image should be the same size as the first image.
 
-- Placement must be entirely within Image 1
-- The foreground must sit on the **existing floor plane** in the lower-left area near the window
-- Do not alter or overwrite any base pixels outside the foreground’s alpha region
+This is a localized compositing task, not scene regeneration.
+Only the bed cover area immediately in front of the pillows is allowed to change.
 
----
+All other parts of the base image — including the floor, parquet pattern, lighting, camera angle, walls, furniture, glass with trapped lego bricks, chessboard, characters, spaceships, onion with three yellow legs, and overall room layout — must remain visually and structurally unchanged.
+Do not redraw, repaint, reinterpret, or regenerate any part of the base scene outside the bed cover near the pillows.
 
-### Compositing constraints
+The second image is a foreground object source only.
+Extract only the three stuffed animals from the second image.
+Discard entirely the second image’s floor, background, lighting, camera angle, shadows, and environment.
 
-- The inserted objects should appear as if they were **originally present** in the base scene
-- Allow **subtle, physically plausible grounding cues**:
+Do not blend or merge any background elements from the second image into the base scene.
+Insert the three extracted stuffed animals into the first image as follows:
+– Place them on the green bed cover, directly in front of the pillows, on the right side of the scene, as if they are resting on the bed cover, and their back is resting on the white wall on the right.
 
-  - Correct floor contact
-  - Perspective-consistent scale
-  - Lighting coherence consistent with the base scene
+– Position them behind the spaceships and the onion with three yellow legs, without altering or moving those objects
 
-- Do **not** invent new light sources
-- Do **not** modify existing shadows, floor texture, or parquet pattern
+– Align them to the existing bed surface perspective and scale
+Resize the stuffed animals so that:
 
-Only the extracted foreground objects may be added.
+– Their combined width is clearly less than half the width of the bed
+– Their overall height is clearly less than half of the height of the pillow
 
----
+Ensure the stuffed animals physically contact the bed cover, with soft fabric contact shadows and subtle fabric indentation, so they sit naturally on the blanket and do not float.
 
-### Output constraints
+Do not modify:
+– Floor or parquet
+– Walls or furniture
+– Lighting direction or intensity
+– Camera angle or perspective
+– Existing characters or objects
 
-- The final image must have **exactly the same resolution as Image 1**:
-  **2752 × 1536 pixels**
-- No cropping
-- No rescaling of the base scene
+Only add the three stuffed animals on the bed cover near the pillows.
 
----
+Preserve their Nintendo-style softness, materials, and proportions, while prioritizing strict preservation of the base image structure.
 
-### Style constraints
+Negative Constraints (keep these)
+redraw floor, duplicate parquet, regenerate background, change camera angle, reinterpret lighting, merge floors, rescale base scene, modify furniture, alter existing characters
 
-- Maintain **Nintendo-style materials, softness, and proportions** for the inserted objects **only**
-- Do not stylize, reinterpret, or smooth the base scene
-- Structural fidelity of Image 1 takes priority over stylistic interpretation
+### Main + suitcase only
 
-This task is **scene compositing**, not scene regeneration.
+Use the first image as the fixed and authoritative base scene. The output image should be the same size as the first image.
 
----
+The floor, parquet pattern, lighting direction, camera angle, perspective, glass with trapped lego bricks, chessboard, characters, spaceship, stuffed animals and room layout of the first image must remain completely unchanged. Do not redraw, repaint, reinterpret, or regenerate any part of the base scene.
 
-### Negative constraints (hard prohibitions)
+The second image is a source of foreground objects only, only the suitcase, the bulborb and the oatchi should be extracted
 
-- redraw floor
-- duplicate parquet
-- regenerate background
-- change camera angle
-- reinterpret lighting
-- merge floors
-- rescale base image
+Extract only the suitcase, the bulborb and the oatchi from the second image and discard its floor, background, camera, shadows, and environment entirely. Do not preserve or blend any part of the second image’s floor or background into the base scene.
+
+Insert the extracted objects from the second image into the first image as follows:
+– Place them on the floor, in front of the wooden part of the bed on the far right side of the base image aligned to the perspective and scale of the base scene, on the far right of the chessboard, it should not touch the chessboard
+
+- Do not alter the suitcase, the bulborb and oatchi
+
+– Resize the extracted objects so that their total height does not exceed one-tenth (1/10) of the height of the base image, ensuring they appear small and toy-like relative to the room.
+
+The inserted objects should appear as if they were originally present in the base scene. Ensure the objects physically contact the floor.
+
+Do not modify the base floor, walls, furniture, or lighting. Only add the extracted objects on top of the existing environment.
+
+Maintain Nintendo-style materials, proportions, and softness, but prioritize preserving the structure of the base image over stylistic reinterpretation. This task is scene compositing, not scene regeneration.
+
+Negative constraints:
+
+– redraw floor
+– duplicate parquet
+– regenerate subscene background
+– change camera angle
+– reinterpret lighting
+– merge floors
+– rescale base scene
+
+### Main + Rubiskube
+
+Use the first image as the fixed and authoritative base scene. The output image should be the same size as the first image.
+
+The floor, parquet pattern, lighting direction, camera angle, perspective, glass with trapped lego bricks, chessboard, characters, spaceship, stuffed animals, suitcase and room layout of the first image must remain completely unchanged. Do not redraw, repaint, reinterpret, or regenerate any part of the base scene.
+
+The second image is a source of foreground objects only, only the rubiskube and the seven Pikmin characters should be extracted
+
+Extract only the rubiskube and the seven Pikmin characters from the second image and discard its floor, background, camera, shadows, and environment entirely. Do not preserve or blend any part of the second image’s floor or background into the base scene.
+
+Insert the extracted objects from the second image into the first image as follows:
+– Place them on top of the white library of the base image aligned to the perspective and scale of the base scene
+
+- Do not alter the rubiskube and the pikmin characters
+
+– Resize the extracted objects so that their total height does not exceed one-tenth (1/10) of the height of the base image, ensuring they appear small and toy-like relative to the library and the room.
+
+The inserted objects should appear as if they were originally present in the base scene. Ensure the objects physically contact the floor.
+
+Do not modify the base floor, walls, furniture, or lighting. Only add the extracted objects on top of the existing environment.
+
+Maintain Nintendo-style materials, proportions, and softness, but prioritize preserving the structure of the base image over stylistic reinterpretation. This task is scene compositing, not scene regeneration.
+
+Negative constraints:
+
+– redraw floor
+– duplicate parquet
+– regenerate subscene background
+– change camera angle
+– reinterpret lighting
+– merge floors
+– rescale base scene
+
+### Main + poster
+
+Use the first image as the fixed and authoritative base scene. The output image should be the same size as the first image.
+
+The floor, parquet pattern, lighting direction, camera angle, perspective, glass with trapped lego bricks, chessboard, characters, spaceship, stuffed animals, rubiksube and room layout of the first image must remain completely unchanged. Do not redraw, repaint, reinterpret, or regenerate any part of the base scene.
+
+Insert the second image as a poster on the wall above the white library. The poster may be cropped.
+
+Poster placement and appearance:
+
+– Position the poster centered above the white library, aligned horizontally with it
+– The poster should be flush against the wall, flat, and rectangular
+– Scale it to a reasonable wall-poster size (smaller than the bed width, clearly readable but not dominating the room)
+– Match the room’s perspective, with subtle perspective correction if needed
+– Apply soft, realistic wall contact shadow around the poster edges
+
+Do not modify the base floor, walls, furniture, or lighting. Only add the poster on top of the existing environment.
+
+Maintain Nintendo-style materials, proportions, and softness, but prioritize preserving the structure of the base image over stylistic reinterpretation. This task is scene compositing, not scene regeneration.
+
+Negative constraints:
+
+– redraw floor
+– duplicate parquet
+– regenerate subscene background
+– change camera angle
+– reinterpret lighting
+– merge floors
+– rescale base scene
